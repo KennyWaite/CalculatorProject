@@ -1,102 +1,168 @@
 main {
-    background-color: black;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.container {
-    display: grid;
-    grid-template-areas:
-        "top top top"
-        "top top top"
-        "mid mid mid"
-        "numb numb funct"
-        "numb numb funct";
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 10% 1fr 1fr;
-    height: 400px;
+
+.out-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 2px solid black;
     width: 300px;
-    // align-items: flex-start;
-    // justify-content: space-around;
-    margin: 50px;
-    background-color: white;
+    height: 450px;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.top-container {
+    display: flex;
+    background-color: rgb(249, 249, 180);
+    flex-direction: column;
+    height: 150px;
+}
+
+.mid-container {
+    background-color: rgb(249, 249, 180);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+
+    &__btn {
+        box-shadow: 1px 1px 5px;
+        background-color: rgb(244, 161, 212);
+        border: 2px solid rgb(116, 76, 101);
+        border-radius: 49%;
+        height: 40px;
+        width: 50px;
+        margin: 5px;
+        color: white;
+        font-weight: bold;
+        box-shadow: 1px 1px rgb(116, 76, 101);
+    }
+}
+
+.bot-container {
+    display: flex;
+    height: 250px;
 }
 
 .topCalc {
-    display: grid;
-    grid-template-areas:
-        "topL topR"
-        "midBox midBox"
-        "botL botR";
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
-    background-color: rgb(249, 249, 180);
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
     &__para {
-        font-family: Georgia, "Times New Roman", Times, serif;
-        font-size: 10px;
-        grid-area: topL;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 20px;
+        color: rgb(153, 228, 210);
+
+        &--text {
+            color: rgb(153, 228, 210);
+            margin-left: 225px;
+            margin-top: 0px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        &--small1 {
+            font-size: 15px;
+            // padding-left: 5px;
+            // padding-top: 7px;
+            margin-left: 25px;
+            margin-top: 8px;
+        }
+
+        &--small2 {
+            font-size: 15px;
+            // padding-left: 5px;
+            // padding-top: 7px;
+            margin-left: 5px;
+            margin-top: 8px;
+        }
+
+        &--bold {
+            font-size: 18px;
+            // padding-left: 5px;
+            font-weight: bold;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
     }
     &__box {
         background-color: black;
-        height: 15px;
-        width: 80px;
-        margin-left: 110px;
-        margin-top: 10px;
-        grid-area: topR;
+        height: 22px;
+        width: 110px;
+        margin-right: 10px;
+        margin-left: 20px;
     }
     &__display {
-        background-color: rgb(225, 241, 181);
-        border: black;
-        height: 50px;
-        width: 90%;
-        margin-left: 10px;
-        margin-right: 10px;
-        grid-area: midBox;
-    }
-
-    &__btn {
-        box-shadow: 1px 1px 5px;
-        background-color: white;
-        border-radius: 5px;
+        background-color: rgb(193, 199, 176);
+        height: 45px;
+        width: 260px;
+        margin-left: 15px;
+        border: 5px solid white;
     }
 }
 
-#topCalc {
-    grid-area: top;
-}
-
-#numbers {
-    grid-area: numb;
-}
 .numbers {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 10px;
+    width: 190px;
     background-color: rgb(161, 244, 223);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 
     &__button {
-        box-shadow: 1px 1px 5px;
+        box-shadow: 1px 1px rgb(116, 76, 101);
         background-color: white;
         border-radius: 5px;
+        width: 52px;
+        height: 45px;
+        font-size: 20px;
+        font-weight: bold;
     }
 }
-
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+}
 .functions {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    // flex-direction: column;
     background-color: rgb(244, 161, 212);
+    width: 110px;
+    // gap: 5px;
 
     &__btn {
-        width: 40px;
-        height: 30px;
-        box-shadow: 1px 1px 5px;
-        background-color: white;
-        border-radius: 5px;
-    }
-}
+        width: 50px;
+        height: 45px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        margin-left: 1spx;
 
-#functions {
-    grid-area: funct;
+        box-shadow: 1px 1px rgb(116, 76, 101);
+        background-color: rgb(244, 161, 212);
+        color: white;
+        border-radius: 5px;
+        font-size: 20px;
+        // margin-top: 5px;
+        // margin-bottom: 5px;
+        font-weight: bold;
+
+        &--longBtn {
+            height: 110px;
+        }
+        &--fit {
+            margin: 0px;
+        }
+    }
 }
