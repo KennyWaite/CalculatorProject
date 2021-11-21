@@ -26,8 +26,8 @@ allNums.forEach((number) => {
         } else if (event.target.innerText === "." && dot) {
             return;
         }
-        displayNum += event.target.innerText;
-        display.innerText += displayNum;
+        // displayNum += event.target.innerText;
+        display.innerText += allNums.innerText;
     });
 });
 
@@ -41,11 +41,10 @@ operator.forEach((operations) => {
         //if display has number has number and operators add them together or whatever function is
         } else if (displayNum && operation) {
             mathFunction();
-        //clear the display if 
         };
 })};
 
-//clear all function to call upon - clears display to empty string
+//clear all function to call upon - clears displa and variables to empty string/0
 const clearFunct = (info) => {
     clear.addEventListener("click", (event) => {
         display.innerText = "0";
@@ -76,7 +75,6 @@ equal.addEventListener("click", (event) => {
     } else {
         alert("Please enter calculation in correct order")
     }
-
 })
 
 
