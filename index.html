@@ -22,57 +22,60 @@
                             id="display"
                             disabled
                         />
-                        <input type="text" class="topCalc__display" disabled />
+
+                        <input type="text"      
+                        placeholder="Your calculation will appear here"               
+                        class="topCalc__display" id="calcDisplay" disabled/></input>
 
                         <p class="topCalc__para topCalc__para--text">SUNSET</p>
                     </div>
                 </div>
 
                 <div class="mid-container">
-                    <button class="mid-container__btn">ON</button>
-                    <button class="mid-container__btn">CE</button>
-                    <button class="mid-container__btn">+/-</button>
-                    <button class="mid-container__btn">√</button>
-                    <button class="mid-container__btn">%</button>
+                    <button class="button mid-container__btn" disabled>ON</button>
+                    <button class="button mid-container__btn" id="clear">C</button>
+                    <button class="button mid-container__btn" disabled>+/-</button>
+                    <button class="button mid-container__btn" disabled>√</button>
+                    <button class="button mid-container__btn" disabled>%</button>
                 </div>
 
                 <div class="bot-container">
                     <div class="numbers" id="numbers">
-                        <button class="numbers__button">7</button>
-                        <button class="numbers__button">8</button>
-                        <button class="numbers__button">9</button>
-                        <button class="numbers__button">4</button>
-                        <button class="numbers__button">5</button>
-                        <button class="numbers__button">6</button>
-                        <button class="numbers__button">1</button>
-                        <button class="numbers__button">2</button>
-                        <button class="numbers__button">3</button>
-                        <button class="numbers__button">0</button>
-                        <button class="numbers__button">.</button>
-                        <button class="numbers__button">=</button>
+                        <button class="button numbers__button">7</button>
+                        <button class="button numbers__button">8</button>
+                        <button class="button numbers__button">9</button>
+                        <button class="button numbers__button">4</button>
+                        <button class="button numbers__button">5</button>
+                        <button class="button numbers__button">6</button>
+                        <button class="button numbers__button">1</button>
+                        <button class="button numbers__button">2</button>
+                        <button class="button numbers__button">3</button>
+                        <button class="button numbers__button">0</button>
+                        <button class="button numbers__button">.</button>
+                        <button class="button numbers__button equals">=</button>
                     </div>
 
                     <div class="functions" id="functions">
-                        <button class="functions__btn">x</button>
-                        <button class="functions__btn">÷</button>
-                        <button class="functions__btn">-</button>
-                        <button class="functions__btn">Mc</button>
+                        <button class="button functions__btn">x</button>
+                        <button class="button functions__btn">÷</button>
+                        <button class="button functions__btn">-</button>
+                        <button class="button functions__btn" disabled>Mc</button>
                         
                         <div class="buttons">
-                             <button class="functions__btn functions__btn--longBtn">
+                             <button class="button functions__btn functions__btn--longBtn">
                             +</button>
                         
-                            <button class="functions__btn ">
-                            M-
-                            </button>
-                             <button class="functions__btn ">
-                            M+
-                             </button>
-                    </div>
+                            <div class="buttons__ms">
+                                 <button class="button functions__btn" disabled>M-</button>
+                                <button class="button functions__btn" disabled>
+                                        M+
+                                </button>
+                            </div>
+                      </div>
                 </div>
             </div>
         </main>
 
-        <script src="javascript.js"></script>
+        <script src="./script.js"></script>
     </body>
 </html>

@@ -121,6 +121,11 @@ main {
   justify-content: center;
   margin: 0px;
 }
+.buttons__ms {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
 .functions {
   display: flex;

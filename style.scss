@@ -131,6 +131,12 @@ main {
     align-items: center;
     justify-content: center;
     margin: 0px;
+
+    &__ms {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 }
 .functions {
     display: flex;
