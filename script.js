@@ -26,8 +26,8 @@ allNums.forEach((number) => {
         } else if (event.target.innerText === "." && dot) {
             return;
         }
-        // displayNum += event.target.innerText;
-        display.innerText += allNums.innerText;
+        displayNum += event.target.innerText;
+        display.innerText += displayNum.innerText;
     });
 });
 
@@ -37,47 +37,43 @@ operator.forEach((operations) => {
         // if display has no numbers in it return alert
         if (!display.innerText) {
             alert("Please input numbers before pressing operator");
-        clearFunct(display.innerText);
+            clearFunct(display.innerText);
+        }
         //if display has number has number and operators add them together or whatever function is
-        } else if (displayNum && operation) {
-            mathFunction();
-        };
-})};
-
-//clear all function to call upon - clears displa and variables to empty string/0
-const clearFunct = (info) => {
-    clear.addEventListener("click", (event) => {
-        display.innerText = "0";
-        displayNum = "";
-        finalresult = "";
+        else if (displayNum && operation) {
+            return mathFunction();
+        }
     });
-};
 
-//math function to call upon - (+/-* the display number plus the next number)
+    //clear all function to call upon - clears displa and variables to empty string/0
+    const clearFunct = (info) => {
+        clear.addEventListener("click", (event) => {
+            display.innerText = "0";
+            displayNum = "";
+            finalresult = "";
+        });
+    };
 
-const mathFunction =() {
-    if (operation === "x") {
-        result = parseFloat(display.innerText) * parseFloat(displayNum);
-    } else if (operation === "+") {
-        result = parseFloat(display.innerText) + parseFloat(displayNum);
-    } else if (operation === "-") {
-        result = parseFloat(display.innerText) - parseFloat(displayNum);
-    } else (operation === "/") {
-        result = parseFloat(display.innerText) / parseFloat(displayNum);
-    } 
-}
+    //math function to call upon - (+/-* the display number plus the next number)
 
-//math function to call upon - (+/-* the display number plus the next number)
-equal.addEventListener("click", (event) => {
-    if (displayNum && operator && displayNum) {
-        result = display.innerText  
-        return result
-    } else {
-        alert("Please enter calculation in correct order")
-    }
-})
+    const mathFunction = () => {
+        if (operation === "x") {
+            result = parseFloat(display.innerText) * parseFloat(displayNum);
+        } else if (operation === "+") {
+            result = parseFloat(display.innerText) + parseFloat(displayNum);
+        } else if (operation === "-") {
+            result = parseFloat(display.innerText) - parseFloat(displayNum);
+        } else result = parseFloat(display.innerText) / parseFloat(displayNum);
+    };
 
-
+    //math function to call upon - (+/-* the display number plus the next number)
+    equal.addEventListener("click", (event) => {
+        if (displayNum && operator && displayNum) {
+            result = display.innerText;
+            return result;
+        } else alert("Please enter calculation in correct order");
+    });
+});
 
 // allButtons.addEventListener('click', () => {
 //         display.addNumber(button.innerText)
@@ -127,5 +123,4 @@ equal.addEventListener("click", (event) => {
 //     appendTextElement("p", inputTask.value, document.querySelector("#tasks"));
 //     inputTask.value = "";
 //     console.log(document.getElementById("tasks").childNodes);
-// });
 //
