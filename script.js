@@ -6,7 +6,7 @@
 // const allButtons = document.querySelectorAll(".button");
 
 //accessing the DOM
-const allNums = document.querySelectorAll(".numbers_button");
+const allNums = document.querySelectorAll(".numbers__button");
 const display = document.querySelector("#calcDisplay");
 const operator = document.querySelectorAll(".functions_btn");
 const equal = document.querySelector(".equals");
@@ -21,15 +21,26 @@ let dot = false;
 // make numbers appear in display and only allow one dot
 allNums.forEach((number) => {
     number.addEventListener("click", (event) => {
-        if (event.target.innerText === "." && !dot) {
-            dot = true;
-        } else if (event.target.innerText === "." && dot) {
-            return;
-        }
-        displayNum += event.target.innerText;
-        display.innerText += displayNum.innerText;
+        // if (event.target.innerText === "." && !dot) {
+        //     dot = true;
+        // } else if (event.target.innerText === "." && dot) {
+        //     return;
+        // }
+        displayNum = event.target.innerText;
+        display.innerText += displayNum;
+        // number = event.target.innerText;
+        // display.innerText += displayNum;
+        // displayNum += event.target.innerText;
+        // display.innerText += displayNum.innerText;
     });
 });
+
+// allNums.forEach((number) => {
+//     number.addEventListener("click", (event) => {
+//         displayNum = event.target.innerText;
+//         display.innerText += displayNum.innerText;
+//     });
+// });
 
 //options for when a (+, -, X or / is pressed)
 operator.forEach((operations) => {
