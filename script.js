@@ -5,12 +5,31 @@
 
 // const allButtons = document.querySelectorAll(".button");
 
+const allBtns = document.querySelectorAll('.numbers__button');
+
+allBtns.forEach( element => {
+  element.addEventListener('click', myFunction);
+})
+
+function myFunction(e) {
+    const value = e.target.value;
+    document.getElementById("calcDisplay").innerHTML = value
+
+
 //accessing the DOM
 const allNums = document.querySelectorAll(".numbers__button");
 const display = document.querySelector("#calcDisplay");
 const operator = document.querySelectorAll(".functions_btn");
 const equal = document.querySelector(".equals");
 const clear = document.querySelector("#clear");
+
+allNums.forEach( element => {
+    element.addEventListener('click', myFunction);
+  })
+
+  function myFunction(e) {
+    const value = e.target.value;
+    document.getElementById("demo").innerHTML = value
 
 // variables to reference
 let displayNum = "";
@@ -19,15 +38,24 @@ let operation = "";
 let dot = false;
 
 // make numbers appear in display and only allow one dot
+const updateDisplay = () => {
+    displayNum = allNums.value.innerText;
+    display.value = displayNum;
+    return display.value;
+};
+
 allNums.forEach((number) => {
     number.addEventListener("click", (event) => {
+        number = event.target.innerText;
+        // display.innerText += number;
+        updateDisplay(number);
         // if (event.target.innerText === "." && !dot) {
         //     dot = true;
         // } else if (event.target.innerText === "." && dot) {
         //     return;
         // }
-        displayNum = event.target.innerText;
-        display.innerText += displayNum;
+        // displayNum = event.target.innerText;
+
         // number = event.target.innerText;
         // display.innerText += displayNum;
         // displayNum += event.target.innerText;
