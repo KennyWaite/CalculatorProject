@@ -40,7 +40,7 @@ allNums.forEach((number) => {
         } else if (event.target.innerText === "." && dot) {
             return;
         }
-        display.value += event.target.innerText;
+        firstNumber = display.value += event.target.innerText;
     });
 });
 
@@ -51,13 +51,18 @@ operators.forEach((operator) => {
         if (display.value === "") {
             return alert("Please input numbers before pressing operator");
         }
-        //if display has number has number and operators add them together or whatever function is
-        console.log(event.target.innerText);
-        operation = event.target.innerText;
-        firstNumber = display.value;
-        display.value = "";
-    });
-});
+        //if display has number and operators add them together or whatever function is
+        operation = firstNumber + operator.innerText;
+
+        // operation = event.target.innerText;
+        display.value += operation
+        
+        //dont press operator more than once;
+        if (display.value.includes("+"||"-"||"x"||"÷") {
+            return alert("Only one operator can be handled at a time");
+        }
+    }
+)};
 
 equal.addEventListener("click", (event) => {
     if (firstNumber && operation && display.value) {
